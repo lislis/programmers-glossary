@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clojure</title>
+
+    <style>
+      html, body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .small-image img {
+      width: 150px;
+      vertical-align: middle;
+      }
+      .medium-image img {
+      width: 450px;
+      }
+      .figure {
+      display: inline-block;
+      }
+      .intro h3 {
+      margin-bottom: .2em
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle, intro
+      background-image: url(clj-logo.png)
+
+      # Clojure
+
+      --
+
+      ### the functional
+      ### the immutable
+      ### the dynamically typed
+
+      --
+
+      .small-image[
+      #### and ![Travis](travis-logo.png)]
+
+      ---
+
+      ## Why am I talking about this?
+
+      ---
+      background-image: url(clojure-bridge.png)
+
+      ---
+
+      layout: true
+
+      ## The Clojure Language
+
+      ---
+
+      ---
+
+      ### It's a Lisp
+
+      --
+
+      # ((((()))))
+
+      --
+
+      [XKCD 224](https://xkcd.com/224/)
+
+      [XKCD 297](https://xkcd.com/297/)
+
+      ---
+
+      ### Two versions
+
+      --
+
+      .center[.small-image[ ![CLJ](clj-logo.png) ![CLJS](cljs-logo.png)]]
+
+      ---
+
+      ### Syntax
+
+      ```clojure
+      (defn add                        ; name
+        [x y]                          ; arguments
+        "Adds together two numbers"    ; documentation
+        (+ x y))
+      ```
+
+      --
+
+      ```clojure
+      (add 1 2)         ;=> 3
+      (add (add 1 2) 4) ;=> 7
+      ```
+      ---
+
+      ### Values
+
+      String, Booleans and nil, Keywords, Numbers (Integers, Decimals, Ratios)
+
+      ---
+
+      ### Data Structures
+
+      --
+
+      #### Vectors
+
+      ```clojure
+      ["a" 3 "foo" 6]
+      (nth [5 6 7] 1) ; 6
+      ```
+
+      ---
+      ### Data Structures
+
+      --
+
+      #### Maps
+
+      ```clojure
+      {:foo "Lisa" :bar "P"}
+      (get {:ci "Travis" :lang "clj"} :lang ) ; "clj"
+      ```
+      ---
+
+      layout: false
+      ## Language Concepts
+
+      ---
+
+      ## The functional
+
+      --
+
+      ### Higher-order functions
+
+      A function can take functions as arguments or return new functions
+
+      --
+
+      ### Pure functions
+
+      A function that has no side effects.
+
+      A function with the same arguments will always return the same value.
+      ---
+
+      ## The immutable
+
+      Data structures in Clojure are immutable.
+
+      Data structures, once created, can't be changed.
+
+      Instead, new ones are created by applying a change to the old one.
+
+      ---
+
+      ## The dynamically typed
+
+      Clojure takes care of figuring out what type of data you're dealing with.
+
+      The Compiler will tell you if there are inconsistencies.
+
+      ---
+
+      ## How did it change my programming?
+
+      --
+
+      - What value am I actually passing around? What values do I expect? Should I check for that?
+
+      --
+
+      - Where do I change values on purpose? Why? Is it necessary? Do I change values without noticing it?
+
+      --
+
+      - How pure are my functions? What do they return? Do they have side effects? Can I rewrite the function to avoid them?
+
+      ---
+
+      class: center, middle
+
+      I think it improved my overall coding
+
+      ---
+
+      ## Bonus: Clojure and Travis
+
+      .center[.medium-image[![clj logo](clj-logo.png) ![Travis logo](travis-logo.png)]]
+
+      ---
+
+      ### Build tools
+
+      .center[.small-image[.figure[![leiningen](leiningen.jpeg)
+        #### Leiningen].figure[![boot](boot-logo.png)
+        #### Boot]]]
+
+      ---
+
+      ### Standard project
+
+      ```bash
+      $ lein new travis-clj
+      ```
+      .medium-image[![project](tree.png)]
+
+      ---
+
+      ### Standard script
+
+      ```bash
+      $ lein test
+      ```
+
+      ---
+
+      ### Build and deploy
+
+      ```bash
+      $ lein uberjar
+      ```
+
+      Procfile
+      ```markdown
+      web: java $JVM_OPTS -cp
+      target/uberjar/travis-clj.jar
+      clojure.main -m travis-clj.core
+      ```
+
+      ---
+
+      class: center, middle
+
+      Thank you!
+
+      https://github.com/lislis/clj-travis
+
+      https://lislis.de/talks/clj-travis
+
+    </textarea>
+    <script src="remark.min.js"></script>
+    <script>var slideshow = remark.create({ratio: "16:9"});</script>
+  </body>
+</html>
