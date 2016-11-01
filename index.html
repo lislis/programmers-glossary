@@ -28,220 +28,115 @@
       class: center, middle, intro
       background-image: url(clj-logo.png)
 
-      # Clojure
-
-      --
-
-      ### the functional
-      ### the immutable
-      ### the dynamically typed
-
-      --
-
-      .small-image[
-      #### and ![Travis](travis-logo.png)]
+      # The Programmer's Glossary
 
       ---
 
-      ## Why am I talking about this?
-
-      ---
-      background-image: url(clojure-bridge.png)
+      # The talk formaly known as The Progammer's Zoo
 
       ---
 
-      layout: true
-
-      ## The Clojure Language
+      # The talk soon to be known The Monkey, the Duck, the Yak in the bike shed
 
       ---
 
-      ---
-
-      ### It's a Lisp
-
-      --
-
-      # ((((()))))
-
-      --
-
-      [XKCD 224](https://xkcd.com/224/)
-
-      [XKCD 297](https://xkcd.com/297/)
+      # Naming things is hard
 
       ---
 
-      ### Two versions
-
-      --
-
-      .center[.small-image[ ![CLJ](clj-logo.png) ![CLJS](cljs-logo.png)]]
+      One of two hard things
 
       ---
 
-      ### Syntax
 
-      ```clojure
-      (defn add                        ; name
-        [x y]                          ; arguments
-        "Adds together two numbers"    ; documentation
-        (+ x y))
-      ```
-
-      --
-
-      ```clojure
-      (add 1 2)         ;=> 3
-      (add (add 1 2) 4) ;=> 7
-      ```
-      ---
-
-      ### Values
-
-      String, Booleans and nil, Keywords, Numbers (Integers, Decimals, Ratios)
+      Like cache validation
 
       ---
 
-      ### Data Structures
-
-      --
-
-      #### Vectors
-
-      ```clojure
-      ["a" 3 "foo" 6]
-      (nth [5 6 7] 1) ; 6
-      ```
-
-      ---
-      ### Data Structures
-
-      --
-
-      #### Maps
-
-      ```clojure
-      {:foo "Lisa" :bar "P"}
-      (get {:ci "Travis" :lang "clj"} :lang ) ; "clj"
-      ```
-      ---
-
-      layout: false
-      ## Language Concepts
+      and one-off errors
 
       ---
 
-      ## The functional
-
-      --
-
-      ### Higher-order functions
-
-      A function can take functions as arguments or return new functions
-
-      --
-
-      ### Pure functions
-
-      A function that has no side effects.
-
-      A function with the same arguments will always return the same value.
-      ---
-
-      ## The immutable
-
-      Data structures in Clojure are immutable.
-
-      Data structures, once created, can't be changed.
-
-      Instead, new ones are created by applying a change to the old one.
+      which brings us to the point
 
       ---
 
-      ## The dynamically typed
-
-      Clojure takes care of figuring out what type of data you're dealing with.
-
-      The Compiler will tell you if there are inconsistencies.
+      Programmers have their own secret language
 
       ---
 
-      ## How did it change my programming?
+      people not in the know have a disadvantage
 
-      --
+      or juniors
 
-      - What value am I actually passing around? What values do I expect? Should I check for that?
+      or project manager
 
-      --
-
-      - Where do I change values on purpose? Why? Is it necessary? Do I change values without noticing it?
-
-      --
-
-      - How pure are my functions? What do they return? Do they have side effects? Can I rewrite the function to avoid them?
+      or new hires
 
       ---
 
-      class: center, middle
+      awkward situations
 
-      I think it improved my overall coding
-
-      ---
-
-      ## Bonus: Clojure and Travis
-
-      .center[.medium-image[![clj logo](clj-logo.png) ![Travis logo](travis-logo.png)]]
+      miscommunication
 
       ---
 
-      ### Build tools
-
-      .center[.small-image[.figure[![leiningen](leiningen.jpeg)
-        #### Leiningen].figure[![boot](boot-logo.png)
-        #### Boot]]]
-
-      ---
-
-      ### Standard project
-
-      ```bash
-      $ lein new travis-clj
-      ```
-      .medium-image[![project](tree.png)]
+      So here are some more or less often used terms
+      so that you know them
+      and so that you can explain them to others
+      using non-technical terms
 
       ---
 
-      ### Standard script
-
-      ```bash
-      $ lein test
-      ```
+      Spoiler: there are not 10
 
       ---
 
-      ### Build and deploy
+      # Down the rabbit hole
 
-      ```bash
-      $ lein uberjar
-      ```
+      bizarre world
 
-      Procfile
-      ```markdown
-      web: java $JVM_OPTS -cp
-      target/uberjar/travis-clj.jar
-      clojure.main -m travis-clj.core
-      ```
+      ---
+
+      # Yak shaving
+
+      ---
+
+      # Red herring
+
+      ---
+
+      # Bikeshedding
+
+      ---
+
+      # Duck typing
+
+      ---
+
+      # Rubber ducking
+
+      ---
+
+      # Monkey Patching
+
+      ---
+
+      Think of the language you use
+      Words are powerful
+      They can include and discriminate
+
+      ask to make sure you're understood correctly
+      explain beforehand to approach introverts
+
+      If you think reading code is hard
+      try reading other people
 
       ---
 
       class: center, middle
 
       Thank you!
-
-      https://github.com/lislis/clj-travis
-
-      https://lislis.de/talks/clj-travis
 
     </textarea>
     <script src="remark.min.js"></script>
